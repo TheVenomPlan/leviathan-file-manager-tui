@@ -1,0 +1,27 @@
+[package]
+name = "levi-tui"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+
+[lints]
+workspace = true
+
+[dependencies]
+levi-core = { workspace = true }
+ratatui = { workspace = true }
+crossterm = { workspace = true }
+# `image-defaults` está apagado: arrastra todos los codecs de `image`
+# (incluida la codificación AVIF de `ravif`, sin uso en levi). Los codecs
+# exactos se declaran en el workspace y se unifican con los de `image`.
+ratatui-image = { workspace = true, default-features = false, features = ["crossterm"] }
+image = { workspace = true }
+pdf-extract = { workspace = true, optional = true }
+
+[features]
+default = ["pdf"]
+pdf = ["dep:pdf-extract"]
+
+[dev-dependencies]
+tempfile = { workspace = true }

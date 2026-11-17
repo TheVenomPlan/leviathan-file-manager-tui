@@ -1,0 +1,6 @@
+#!/bin/sh
+# Validación completa antes de subir cambios.
+# Se activa con: ./scripts/dev.sh hooks
+set -eu
+cd "$(git rev-parse --show-toplevel)"
+exec ./scripts/dev.sh check

@@ -1,0 +1,25 @@
+[package]
+name = "levi"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+
+[lints]
+workspace = true
+
+[[bin]]
+name = "levi"
+path = "src/main.rs"
+
+[dependencies]
+levi-core = { workspace = true }
+levi-tui = { workspace = true }
+anyhow = { workspace = true }
+clap = { workspace = true }
+crossterm = { workspace = true }
+directories = { workspace = true }
+open = { workspace = true }
+tracing = { workspace = true }
+tracing-appender = { workspace = true }
+tracing-subscriber = { workspace = true }

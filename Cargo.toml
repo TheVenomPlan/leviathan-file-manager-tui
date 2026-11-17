@@ -1,0 +1,64 @@
+[workspace]
+resolver = "3"
+members = ["crates/levi-core", "crates/levi-tui", "crates/levi"]
+
+# Las compilaciones de desarrollo mantienen solo las tablas de líneas: los
+# backtraces siguen indicando archivo y línea, pero sin el volumen completo
+# de símbolos de depuración (que multiplica por ~3 el peso de target/debug).
+[profile.dev]
+debug = "line-tables-only"
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+license = "MIT OR Apache-2.0"
+rust-version = "1.99"
+
+[workspace.dependencies]
+levi-core = { path = "crates/levi-core" }
+levi-tui = { path = "crates/levi-tui" }
+
+# UI
+ratatui = "0.30"
+crossterm = { version = "0.29", features = ["osc52"] }
+
+# Previews
+# Solo se decodifican imágenes para la vista previa (nunca se codifica), así
+# que se activan únicamente los codecs de los formatos admitidos. Los
+# features por defecto arrastran `ravif`/`rav1e` (codificación AVIF, ~200 MB
+# de artefactos) que no se usan: `image-defaults` de ratatui-image se apaga
+# por el mismo motivo.
+ratatui-image = { version = "11", default-features = false, features = ["crossterm"] }
+image = { version = "0.25", default-features = false, features = ["png", "jpeg", "gif", "webp", "bmp", "tiff", "ico"] }
+pdf-extract = "0.12"
+
+# Filesystem
+trash = "5"
+
+# Sistema
+open = "5"
+directories = "6"
+
+# Config
+serde = { version = "1", features = ["derive"] }
+toml = "1"
+
+# Fechas
+chrono = "0.4"
+
+# CLI
+clap = { version = "4", features = ["derive"] }
+
+# Errores / logs
+anyhow = "1"
+thiserror = "2"
+tracing = "0.1"
+tracing-appender = "0.2"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+
+# Tests
+tempfile = "3"
+
+# Reglas que AGENTS.md exige pero que es mejor que vigile el compilador.
+[workspace.lints.clippy]
+unwrap_used = "deny"
