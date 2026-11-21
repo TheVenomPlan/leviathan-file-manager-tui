@@ -2,7 +2,7 @@
 
 Administrador de archivos para terminal inspirado en Ranger y Yazi, escrito en Rust.
 
-> **Sobre el nombre:** el proyecto se llamaba antes «Levi File Manager TUI». El cambio a **Leviathan File Manager TUI** evita la colisión con la marca de calzado Levi's. Por ahora se mantienen los nombres internos (`levi-core`, `levi-tui`, `levi`) y el binario `levi`.
+> **Objetivo:** ofrecer un administrador de archivos de terminal rápido y extensible, con navegación tipo vim, previews fluidos y operaciones que nunca bloqueen la interfaz, manteniendo separada la lógica de negocio del renderizado.
 
 Incluye navegación tipo vim, paneles padre/actual/vista previa, pestañas, operaciones de archivos, previews, openers, temas, búsqueda y selección múltiple. No tiene editor de texto embebido: la edición usa `$EDITOR` o `$VISUAL`.
 
