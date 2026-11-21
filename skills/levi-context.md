@@ -1,4 +1,4 @@
-Contexto maestro del proyecto Levi File Manager. Siempre usar CodebaseMemory antes de analizar código o proponer cambios.
+Contexto maestro del proyecto Leviathan File Manager TUI. Siempre usar CodebaseMemory antes de analizar código o proponer cambios.
 PRIORIDAD OBLIGATORIA
 
 Antes de cualquier tarea:
@@ -10,7 +10,7 @@ Antes de cualquier tarea:
 
 PROYECTO
 
-Levi File Manager TUI
+Leviathan File Manager TUI
 
 Lenguaje:
 

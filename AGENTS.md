@@ -38,7 +38,7 @@ Seguir estrictamente este orden:
 La información obtenida desde CodebaseMemory tiene prioridad sobre este archivo.
 Proyecto
 
-Levi File Manager TUI.
+Leviathan File Manager TUI.
 
 Administrador de archivos para terminal inspirado en Ranger y Yazi.
 
